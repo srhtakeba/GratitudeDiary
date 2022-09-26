@@ -1,6 +1,7 @@
-package model;
+package model.token;
 
 import java.time.LocalDate;
+import java.util.Objects;
 
 /**
  * A class that implements the Token model.
@@ -32,5 +33,20 @@ public class TokenImpl implements Token{
   @Override
   public Recipient getRecipient() {
     return this.recipient;
+  }
+
+  @Override
+  public void setText(String s) {
+    this.text = s;
+  }
+
+  @Override
+  public void setRecipient(Recipient r) {
+    this.recipient = r;
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(this.getText(), this.getCreationDate());
   }
 }

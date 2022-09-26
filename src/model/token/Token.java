@@ -1,4 +1,4 @@
-package model;
+package model.token;
 import java.time.LocalDate;
 
 /**
@@ -20,4 +20,20 @@ public interface Token {
    * Returns the recipient of token of gratitude
    */
   Recipient getRecipient();
+
+  /**
+   * Sets the token of gratitude's text
+   */
+  void setText(String s);
+
+  /**
+   * Sets the recipient of token of gratitude
+   */
+  void setRecipient(Recipient r);
+
+  /**
+   * Returns the hashcode for this token
+   */
+  @Override
+  int hashCode();
 }

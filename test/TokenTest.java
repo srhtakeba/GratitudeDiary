@@ -2,6 +2,7 @@ import static org.junit.Assert.*;
 
 import java.time.LocalDate;
 import model.token.Recipient;
+import model.token.RecipientImpl;
 import model.token.Token;
 import model.token.TokenImpl;
 import org.junit.After;
@@ -14,14 +15,21 @@ public class TokenTest {
   private Token t2;
   private Token t3;
   private LocalDate now;
-  private Recipient r;
+  private Recipient r1;
+  private Recipient r2;
+  private Recipient r3;
 
 
   @Before
   public void setUp() throws Exception {
-    this.t1 = new TokenImpl("good dinner", r);
-    this.t2 = new TokenImpl("nice weather", r);
-    this.t3 = new TokenImpl("train on time",r);
+    this.r1 = new RecipientImpl("family");
+    this.r2 = new RecipientImpl("nature");
+    this.r3 = new RecipientImpl("myself");
+
+
+    this.t1 = new TokenImpl("good dinner", r1);
+    this.t2 = new TokenImpl("nice weather", r2);
+    this.t3 = new TokenImpl("wake up on time",r3);
     this.now = LocalDate.now();
   }
 
@@ -33,8 +41,8 @@ public class TokenTest {
   public void getText() {
     assertEquals("good dinner", t1.getText());
     assertEquals("nice weather", t2.getText());
-    assertEquals("train on time", t3.getText());
-    assertNotEquals("train on time", t1.getText());
+    assertEquals("wake up on time", t3.getText());
+    assertNotEquals("wake up on time", t1.getText());
   }
 
   @Test
@@ -47,6 +55,12 @@ public class TokenTest {
 
   @Test
   public void getRecipient() {
+    assertEquals(t1.getRecipient(), r1);
+    assertEquals(t2.getRecipient(), r2);
+    assertEquals(t3.getRecipient(), r3);
+    assertNotEquals(t3.getRecipient(), r2);
+
+    assertEquals(t1.getRecipient().toString(), "FAMILY");
   }
 
   @Test
@@ -60,6 +74,9 @@ public class TokenTest {
 
   @Test
   public void setRecipient() {
+    assertEquals(t1.getRecipient(), r1);
+    t1.setRecipient(r2);
+    assertEquals(t1.getRecipient(), r2);
   }
 
   @Test

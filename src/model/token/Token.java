@@ -36,4 +36,10 @@ public interface Token {
    */
   @Override
   int hashCode();
+
+  /**
+   * Checks for equality between and Object and this Token
+   */
+  @Override
+  boolean equals(Object o);
 }

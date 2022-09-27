@@ -1,6 +1,7 @@
 package model.token;
 
 import java.time.LocalDate;
+import java.util.Locale;
 import java.util.Objects;
 
 /**
@@ -48,5 +49,24 @@ public class TokenImpl implements Token{
   @Override
   public int hashCode() {
     return Objects.hash(this.getText(), this.getCreationDate());
+  }
+
+  /**
+   * Checks the given object with this {@code TokenImpl} for equality.
+   *
+   * @param o the object to be compared to
+   * @return does this {@code TokenImpl} equal the given object?
+   */
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (!(o instanceof TokenImpl)) {
+      return false;
+    }
+    TokenImpl that = (TokenImpl) o;
+    return this.text.equals(that.getText()) && this.recipient.equals(that.getRecipient())
+        && this.creationDate.equals(that.getCreationDate());
   }
 }

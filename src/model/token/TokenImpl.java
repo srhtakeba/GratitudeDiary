@@ -13,7 +13,7 @@ public class TokenImpl implements Token{
   private Recipient recipient;
 
   /**
-   * Constructs an {@code TokenImpl} object.
+   * Constructs an {@code TokenImpl} object
    */
   public TokenImpl(String text, Recipient recipient){
     this.text = text;

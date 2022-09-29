@@ -41,4 +41,16 @@ public interface TokenCollection {
    */
   public int countTokens();
 
+  /**
+   * A method to get the date of the oldest Token in this {@code TokenCollection}
+   * @return the {@code LocalDate} of oldest Token addition
+   */
+  public LocalDate getOldestDate();
+
+  /**
+   * A method to get the date of the most recent Token in this {@code TokenCollection}
+   * @return the {@code LocalDate} of the most recent Token addition
+   */
+  public LocalDate getMostRecentDate();
+
 }

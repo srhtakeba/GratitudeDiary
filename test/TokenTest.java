@@ -38,7 +38,7 @@ public class TokenTest {
   }
 
   @Test
-  public void getText() {
+  public void testGetText() {
     assertEquals("good dinner", t1.getText());
     assertEquals("nice weather", t2.getText());
     assertEquals("wake up on time", t3.getText());
@@ -46,7 +46,7 @@ public class TokenTest {
   }
 
   @Test
-  public void getCreationDate() {
+  public void testGetCreationDate() {
     assertEquals(t1.getCreationDate(), this.now);
     assertEquals(t2.getCreationDate(), this.now);
     assertEquals(t3.getCreationDate(), this.now);
@@ -54,7 +54,7 @@ public class TokenTest {
   }
 
   @Test
-  public void getRecipient() {
+  public void testGetRecipient() {
     assertEquals(t1.getRecipient(), r1);
     assertEquals(t2.getRecipient(), r2);
     assertEquals(t3.getRecipient(), r3);
@@ -64,7 +64,7 @@ public class TokenTest {
   }
 
   @Test
-  public void setText() {
+  public void testSetText() {
     assertEquals("good dinner", t1.getText());
     t1.setText("good lunch");
     assertEquals("good lunch", t1.getText());
@@ -73,7 +73,7 @@ public class TokenTest {
   }
 
   @Test
-  public void setRecipient() {
+  public void testSetRecipient() {
     assertEquals(t1.getRecipient(), r1);
     t1.setRecipient(r2);
     assertEquals(t1.getRecipient(), r2);

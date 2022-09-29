@@ -47,6 +47,11 @@ public class TokenImpl implements Token{
   }
 
   @Override
+  public void setCreationDate(LocalDate d) {
+    this.creationDate = d;
+  }
+
+  @Override
   public int hashCode() {
     return Objects.hash(this.getText(), this.getCreationDate());
   }

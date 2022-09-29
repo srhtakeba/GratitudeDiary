@@ -12,15 +12,28 @@ import model.token.Token;
 public class GratitudeDump implements TokenCollection {
   private List<Token> tokens;
 
+  /**
+   * Constructs a new {@code GratitudeDump} object.
+   */
   public GratitudeDump() {
     this.tokens = new ArrayList<Token>();
   }
 
+  /**
+   * Adds a new token to this {@code GratitudeDump}.
+   * @param token the token to be added
+   */
   @Override
   public void addToken(Token token) {
     this.tokens.add(token);
   }
 
+  /**
+   * Finds a list of {@code Token} objects in this {@code GratitudeDump} which have the
+   * same date as the date passed.
+   * @param date the date to be searched for
+   * @return the list of {@code Token} objects of the given date
+   */
   @Override
   public List<Token> getTokensFromDate(LocalDate date) {
     List<Token> result = new ArrayList();

@@ -32,6 +32,11 @@ public interface Token {
   void setRecipient(Recipient r);
 
   /**
+   * Sets the date of token
+   */
+  void setCreationDate(LocalDate d);
+
+  /**
    * Returns the hashcode for this token
    */
   @Override

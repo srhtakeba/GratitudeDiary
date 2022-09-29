@@ -80,6 +80,13 @@ public class TokenTest {
   }
 
   @Test
+  public void testSetDate() {
+    LocalDate newDate = LocalDate.of(2020, 10, 15);
+    t1.setCreationDate(LocalDate.of(2020,10,15));
+    assertEquals(t1.getCreationDate(), newDate);
+  }
+
+  @Test
   public void testHashCode() {
   }
 }

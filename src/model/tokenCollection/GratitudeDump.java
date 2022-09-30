@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import model.token.Token;
+import model.token.TokenImpl;
 
 /**
  * A class to represent a {@code GratitudeDump} this is a token collection where all of the
@@ -108,5 +109,17 @@ public class GratitudeDump implements TokenCollection {
     else {
       return null;
     }
+  }
+
+  @Override
+  public List<Token> getAllTokens() {
+    List<Token> result = new ArrayList<Token>();
+    Token toBeAdded;
+    for(Token t : this.tokens) {
+      toBeAdded = new TokenImpl(t.getText(), t.getRecipient());
+      toBeAdded.setCreationDate(t.getCreationDate());
+      result.add(toBeAdded);
+    }
+    return result;
   }
 }

@@ -53,4 +53,10 @@ public interface TokenCollection {
    */
   public LocalDate getMostRecentDate();
 
+  /**
+   * A method to return all of the tokens stored in this {@code TokenCollection}
+   * @return a list of tokens
+   */
+  List<Token> getAllTokens();
+
 }

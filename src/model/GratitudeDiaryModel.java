@@ -46,4 +46,10 @@ public interface GratitudeDiaryModel {
    * @return the list of recipients in this Gratitude Diary
    */
   List<Recipient> getRecipients();
+
+  /**
+   * Get the list of tokens in this gratitude diary
+   * @return the list of tokens stored in this gratitude diary
+   */
+  List<Token> getAllTokens();
 }

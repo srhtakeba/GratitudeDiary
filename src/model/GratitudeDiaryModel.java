@@ -15,9 +15,17 @@ public interface GratitudeDiaryModel {
    * (Use LocalDate.now(),
    * @param text The textual explanation of the token of gratitude.
    * @param to The recipient of the token of gratitude.
-   * @param destination the destinating place to store this token of gratitude.
+   * @param destination the place to store this token of gratitude.
    */
   void addToken(String text, Recipient to, TokenCollection destination);
+
+  /**
+   * Adds a token of gratitude to the gratitude diary
+   * (Use LocalDate.now(),
+   * @param text The textual explanation of the token of gratitude.
+   * @param to The recipient of the token of gratitude.
+   */
+  void addToken(String text, Recipient to);
 
   /**
    * Get a list of Tokens on oldest date from a token collection
